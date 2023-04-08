@@ -8897,9 +8897,8 @@ function $p_Lsquash_Main$__buildTable$1__Lorg_scalajs_dom_raw_HTMLTableElement__
   };
   return table$1
 }
-function $p_Lsquash_Main$__setupText$1__Lorg_scalajs_dom_raw_Element__Lorg_scalajs_dom_raw_Element__Lorg_scalajs_dom_raw_Element__Lorg_scalajs_dom_raw_Element__Lorg_scalajs_dom_raw_Element__V($thiz, timeText$1, arrivedText$1, readyText$1, onCourtText$1, restingText$1) {
+function $p_Lsquash_Main$__setupText$1__Lorg_scalajs_dom_raw_Element__Lorg_scalajs_dom_raw_Element__Lorg_scalajs_dom_raw_Element__Lorg_scalajs_dom_raw_Element__V($thiz, timeText$1, readyText$1, onCourtText$1, restingText$1) {
   timeText$1.textContent = "Time: ";
-  arrivedText$1.textContent = "\tArrived: ";
   readyText$1.textContent = "\tReady to play: ";
   onCourtText$1.textContent = "\tOn court: ";
   restingText$1.textContent = "\tResting: "
@@ -9334,13 +9333,10 @@ function $p_Lsquash_Main$__updateText$1__I__Lsquash_Model$Session__V($thiz, time
   if ((x1 === null)) {
     throw new $c_s_MatchError(x1)
   };
-  var arrived = $as_sci_Map(x1._2__O());
+  $as_sci_Map(x1._2__O());
   $m_Lorg_scalajs_dom_package$().document__Lorg_scalajs_dom_raw_HTMLDocument().getElementById("timeP").textContent = (("Time: " + time) + " minutes");
-  var $$x1 = $m_Lorg_scalajs_dom_package$().document__Lorg_scalajs_dom_raw_HTMLDocument().getElementById("arrivedP");
-  var this$2 = arrived.keySet__sc_Set();
-  $$x1.textContent = (("\tArrived: " + $f_sc_IterableOnceOps__mkString__T__T__T__T(this$2, "", ", ", "")) + " ");
-  var $$x2 = $m_Lorg_scalajs_dom_package$().document__Lorg_scalajs_dom_raw_HTMLDocument().getElementById("readyP");
-  var this$3 = $as_sc_MapOps(s.Lsquash_Model$Session__f_players.filter__F1__O(new $c_sjsr_AnonFunction1(((this$2$1) => ((x$9$2) => {
+  var $$x1 = $m_Lorg_scalajs_dom_package$().document__Lorg_scalajs_dom_raw_HTMLDocument().getElementById("readyP");
+  var this$3 = $as_sc_MapOps(s.Lsquash_Model$Session__f_players.filter__F1__O(new $c_sjsr_AnonFunction1(((this$2) => ((x$9$2) => {
     var x$9 = $as_T2(x$9$2);
     var x$1 = $as_Lsquash_Model$Player(x$9._2__O()).Lsquash_Model$Player__f_playingState;
     var x$2$1 = $m_Lsquash_Model$Ready$();
@@ -9351,8 +9347,8 @@ function $p_Lsquash_Main$__updateText$1__I__Lsquash_Model$Session__V($thiz, time
   var this$6 = $m_sci_Nil$().prependedAll__sc_IterableOnce__sci_List(this$4);
   var ord = $m_s_math_Ordering$Int$();
   var this$7 = $as_sc_IterableOnceOps($f_sc_SeqOps__sorted__s_math_Ordering__O(this$6, ord));
-  $$x2.textContent = ("\tReady to play: " + $f_sc_IterableOnceOps__mkString__T__T__T__T(this$7, "", ", ", ""));
-  var $$x3 = $m_Lorg_scalajs_dom_package$().document__Lorg_scalajs_dom_raw_HTMLDocument().getElementById("onCourtP");
+  $$x1.textContent = ("\tReady to play: " + $f_sc_IterableOnceOps__mkString__T__T__T__T(this$7, "", ", ", ""));
+  var $$x2 = $m_Lorg_scalajs_dom_package$().document__Lorg_scalajs_dom_raw_HTMLDocument().getElementById("onCourtP");
   var this$8 = s.Lsquash_Model$Session__f_gamesPlaying;
   var f = ((this$3$1) => ((g$2) => {
     var g = $as_Lsquash_Model$Game(g$2);
@@ -9374,8 +9370,8 @@ function $p_Lsquash_Main$__updateText$1__I__Lsquash_Model$Session__V($thiz, time
     };
     var this$9 = h
   };
-  $$x3.textContent = ("\tOn court: " + $f_sc_IterableOnceOps__mkString__T__T__T__T(this$9, "", ", ", ""));
-  var $$x4 = $m_Lorg_scalajs_dom_package$().document__Lorg_scalajs_dom_raw_HTMLDocument().getElementById("restingP");
+  $$x2.textContent = ("\tOn court: " + $f_sc_IterableOnceOps__mkString__T__T__T__T(this$9, "", ", ", ""));
+  var $$x3 = $m_Lorg_scalajs_dom_package$().document__Lorg_scalajs_dom_raw_HTMLDocument().getElementById("restingP");
   var this$10 = $as_sc_MapOps(s.Lsquash_Model$Session__f_players.filter__F1__O(new $c_sjsr_AnonFunction1(((this$4$1) => ((x$10$2) => {
     var x$10 = $as_T2(x$10$2);
     return ($as_Lsquash_Model$Player(x$10._2__O()).Lsquash_Model$Player__f_playingState instanceof $c_Lsquash_Model$Resting)
@@ -9385,7 +9381,7 @@ function $p_Lsquash_Main$__updateText$1__I__Lsquash_Model$Session__V($thiz, time
   var this$13 = $m_sci_Nil$().prependedAll__sc_IterableOnce__sci_List(this$11);
   var ord$1 = $m_s_math_Ordering$Int$();
   var this$14 = $as_sc_IterableOnceOps($f_sc_SeqOps__sorted__s_math_Ordering__O(this$13, ord$1));
-  $$x4.textContent = ("\tResting: " + $f_sc_IterableOnceOps__mkString__T__T__T__T(this$14, "", ", ", ""))
+  $$x3.textContent = ("\tResting: " + $f_sc_IterableOnceOps__mkString__T__T__T__T(this$14, "", ", ", ""))
 }
 /** @constructor */
 function $c_Lsquash_Main$() {
@@ -9473,11 +9469,10 @@ $c_Lsquash_Main$.prototype.setupSchedule__sci_List = (function() {
 });
 $c_Lsquash_Main$.prototype.drawGame__Lorg_scalajs_dom_raw_HTMLTableElement__sci_List__V = (function(table, schedule) {
   var timeText = this.createP__T__Lorg_scalajs_dom_raw_Element("timeP");
-  var arrivedText = this.createP__T__Lorg_scalajs_dom_raw_Element("arrivedP");
   var onCourtText = this.createP__T__Lorg_scalajs_dom_raw_Element("onCourtP");
   var restingText = this.createP__T__Lorg_scalajs_dom_raw_Element("restingP");
   var readyText = this.createP__T__Lorg_scalajs_dom_raw_Element("readyP");
-  $p_Lsquash_Main$__setupText$1__Lorg_scalajs_dom_raw_Element__Lorg_scalajs_dom_raw_Element__Lorg_scalajs_dom_raw_Element__Lorg_scalajs_dom_raw_Element__Lorg_scalajs_dom_raw_Element__V(this, timeText, arrivedText, readyText, onCourtText, restingText);
+  $p_Lsquash_Main$__setupText$1__Lorg_scalajs_dom_raw_Element__Lorg_scalajs_dom_raw_Element__Lorg_scalajs_dom_raw_Element__Lorg_scalajs_dom_raw_Element__V(this, timeText, readyText, onCourtText, restingText);
   $m_Lorg_scalajs_dom_package$().document__Lorg_scalajs_dom_raw_HTMLDocument().body.appendChild(table);
   $p_Lsquash_Main$__buildTable$1__Lorg_scalajs_dom_raw_HTMLTableElement__sci_List__Lorg_scalajs_dom_raw_HTMLTableElement(this, table, schedule);
   table.setAttribute("style", "border-collapse: collapse;");
